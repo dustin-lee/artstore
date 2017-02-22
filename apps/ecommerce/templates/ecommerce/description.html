@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {%load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'ecommerce/css/description.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+            var scroll_pos = 0;
+            $(document).scroll(function() {
+                scroll_pos = $(this).scrollTop();
+                if(scroll_pos > 10) {
+                    $("header").css('background', 'black');
+                    $("navbar a").css('color', '#39A7CF');
+                    $("navbar h1").css('color', '#39A7CF');
+                } else {
+                    $("navbar").css('background', 'white');
+                    $("navbar a").css('color', 'black');
+                    $("navbar h1").css('color', 'black');
+                }
+            });
+        });
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <navbar>
+    <div id="header">
+    <a href="/home"><img id="logo" src="{% static 'ecommerce/images/logo.png'%}"></a>
+    <div class="tags">
+      <a href="/productpage">NEW</a>
+      <a href="/productpage">ART</a>
+      <a href="/productpage">JEWELRY</a>
+      <a href="/productpage">OTHER</a>
+      <a href="/productpage">SALE</a>
+    </div>
+
+          <div id="rightheader">
+          <a href="" class="cart"><img src="{% static 'ecommerce/images/cart.png' %}" alt="cart"></a>
+          <form action="">
+            <input type="text" name="searchbar" placeholder="Search">
+            <input type="submit" style="visibility: hidden;" />
+          </form>
+          </div>
+  <navbar>
+
+    </div>
+    <div id="maincontent">
+        <div id="mainimageall">
+
+          <div class="hvr-zone"></div>
+{% for thingy in meep %}
+          <div id="mainimage">
+            <img src="./../../static/graphics/{{thingy.image}}" height="400" width="300" alt="">
+
+          </div>
+{% endfor %}
+
+        {% for thingy in meep %}
+        <div id="imagecontent">
+            <h3>{{thingy.name}}</h3>
+            <h5>{{thingy.price}}</h5><hr>
+              <p>{{thingy.description}}</p><hr>
+            <select>
+              <option value="1($10.00)">1 for {{ thingy.price}}</option>
+              <option value="2($20.00)">{{ thingy.price }}</option>
+              <option value="3($28.00)">{{ thingy.price}}</option>
+            </select>
+            <form action="/shoppingcart/{{thingy.id}}" method="POST">{% csrf_token %}<button>BUY</button></form>
+          </div></div>
+        {% endfor %}
+
+      <div class="description2">
+          <p>detailed description about the product...detailed description about the product...detailed description about the product...detailed description about the product...detailed description about the product...</p>
+      </div>
+        <div id="similaritems">
+            <h3>SIMILIAR ITEMS</h3>
+            {% for thingy in meep%}
+            <div class="ri 1">
+              <img src="./../../static/graphics/{{thingy.image}}" height="150" width="50" alt=""></a>
+            </div>
+        </div>
+          {% endfor %}
+
+
+
+    </div><!--end of maincontent-->
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>BD<span>FJ</span></h3>
+
+      <p class="footer-links">
+        <a href="#">Home</a>
+        .
+        <a href="#">Blog</a>
+        .
+        <a href="#">Pricing</a>
+        .
+        <a href="#">About</a>
+        .
+        <a href="#">Faq</a>
+        .
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">BDFJ &copy; 2016</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Coding Dojo Burbank</span> CA, USA</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1 123 123456</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">bdfj@comopany.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="https://www.facebook.com/dustin.lee.737?fref=ts"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>

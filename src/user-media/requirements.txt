@@ -1,0 +1,5 @@
+django
+django-generic-positions
+django-libs
+simplejson
+easy_thumbnails

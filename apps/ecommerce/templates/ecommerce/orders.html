@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {%load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/css/orders.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  <div id="header">
+    <h1>Dashboard</h1>
+
+    <a href="" ><h2 id="or">Orders</h2></a>
+    <a href=""><h2>Products</h2></a>
+    <a href=""><h2>Log off</h2></a>
+  </div>
+  <form action="">
+    <input type="text" name="searchbar" placeholder="Search">
+    <input type="submit" style="visibility: hidden;" />
+  </form>
+
+<div id="orderby">
+  Order By<select>
+    <option value="ID">ID</option>
+    <option value="Name">Name</option>
+    <option value="Date">Date</option>
+    <option value="Date">Billin Address</option>
+    <option value="Date">Total</option>
+    <option value="Date">Status</option>
+  </select>
+</div>
+
+
+
+  <table>
+  <tr>
+    <th>Order ID</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Billing Address</th>
+    <th>Total</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>bob</td>
+    <td>3/3/10</td>
+    <td>123 alksdklfjasldkfid  aldkfj adif adklf adslf aidsfj</td>
+    <td>$191</td>
+    <td>  <select>
+        <option value="1($10.00)">1($10.00)</option>
+        <option value="2($20.00)">2($20.00)</option>
+        <option value="3($28.00)">3($28.00)</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+</body>
+</html>

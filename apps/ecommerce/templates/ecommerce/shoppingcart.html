@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'ecommerce/css/shoppingcart.css' %}">
+<title>Shopping Cart</title>
+
+<script type='text/javascript'
+  src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <navbar>
+    <div id="header">
+    <a href="/home">  <img id="logo" src="{% static 'ecommerce/images/logo.png'%}"></a>
+    <div class="tags">
+      <a href="/productpage">NEW</a>
+      <a href="/productpage">ART</a>
+      <a href="/productpage">JEWELRY</a>
+      <a href="/productpage">OTHER</a>
+      <a href="/productpage">SALE</a>
+    </div>
+
+          <div id="rightheader">
+          <a href="" class="cart"><img src="{% static 'ecommerce/images/cart.png' %}" alt="cart"></a>
+          <form action="">
+            <input type="text" name="searchbar" placeholder="Search">
+            <input type="submit" style="visibility: hidden;" />
+          </form>
+          </div>
+  <navbar>
+
+    </div>
+
+<div id="bodycontent">
+
+<div id="shoppingcart">
+    <form action="/checkout">
+		<div class="col-xs-8">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<div class="row">
+							<div class="col-xs-6">
+								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" type="button" class="btn btn-primary btn-sm btn-block">
+									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+            {% for thingy in meep %}
+						<div class="col-xs-2"><img class="img-responsive" src="./../../static/graphics/{{thingy.image}}" height="100" width="100">
+						</div>
+						<div class="col-xs-4">
+							<h4 class="product-name"><strong>{{thingy.name}}</strong></h4><h4><small>{{thingy.description}}</small></h4>
+						</div>
+						<div class="col-xs-6">
+							<div class="col-xs-6 text-right">
+								<h6><strong>{{thingy.price}} <span class="text-muted">x</span></strong></h6>
+							</div>
+							<div class="col-xs-4">
+								<input type="text" class="form-control input-sm" value="1">
+							</div>
+
+							<div class="col-xs-2">
+								<button type="button" class="btn btn-link btn-xs">
+									<span class="glyphicon glyphicon-trash"> </span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr>
+          <div class="row">
+						<div class="text-center">
+							<div class="col-xs-9">
+								<h6 class="text-right">Added items?</h6>
+							</div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-default btn-sm btn-block">
+									Update cart
+								</button>
+							</div>
+						</div>
+					<!-- <div class="row"> -->
+						<!-- <div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
+						</div>
+						<div class="col-xs-4">
+							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+						</div>
+						<div class="col-xs-6">
+							<div class="col-xs-6 text-right">
+								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+							</div> -->
+							<!-- <div class="col-xs-4">
+								<input type="text" class="form-control input-sm" value="1">
+							</div>
+							<div class="col-xs-2">
+								<button type="button" class="btn btn-link btn-xs">
+									<span class="glyphicon glyphicon-trash"> </span>
+								</button> -->
+							<!-- </div>
+						</div>
+					</div>
+					<hr> -->
+					<!-- <div class="row">
+						<div class="text-center">
+							<div class="col-xs-9">
+								<h6 class="text-right">Added items?</h6>
+							</div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-default btn-sm btn-block">
+									Update cart
+								</button>
+							</div>
+						</div> -->
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row text-center">
+						<div class="col-xs-9">
+							<h4 class="text-right">Total <strong>{{thingy.price}}</strong></h4>
+						</div>
+            {% endfor %}
+						<div class="col-xs-3">
+              <!-- <div class="modal fade" id="myModal" role="dialog">
+               <div class="modal-dialog"> -->
+							<!-- <a href="#" type="button" class="btn btn-success btn-block" data-toggle="modal"> -->
+              <form action="/checkout">
+              <input type="submit" class="btn btn-success btn-block" value="Checkout">
+              </form>
+						</div><br>
+          </form>
+          </form>
+
+      <!--beginning of modal-->
+      <form>
+    <button class="btn btn-default btn-block" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/Register</button>
+
+      <!-- Modal -->
+      <div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <br>
+              <div class="bs-example bs-example-tabs">
+                  <ul id="myTab" class="nav nav-tabs">
+                    <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+                    <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+                  </ul>
+              </div>
+            <div class="modal-body">
+              <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade active in" id="signin">
+                  <form class="form-horizontal">
+                  <fieldset>
+                  <!-- Sign In Form -->
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label class="control-label" for="userid">Alias:</label>
+                    <div class="controls">
+                      <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
+                    </div>
+                  </div>
+
+                  <!-- Password input-->
+                  <div class="control-group">
+                    <label class="control-label" for="passwordinput">Password:</label>
+                    <div class="controls">
+                      <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
+                    </div>
+                  </div>
+
+                  <!-- Multiple Checkboxes (inline) -->
+                  <div class="control-group">
+                    <label class="control-label" for="rememberme"></label>
+                    <div class="controls">
+                      <label class="checkbox inline" for="rememberme-0">
+                        <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
+                        Remember me
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="control-group">
+                    <label class="control-label" for="signin"></label>
+                    <div class="controls">
+                      <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                    </div>
+                  </div>
+                  </fieldset>
+                  </form>
+              </div>
+              <div class="tab-pane fade" id="signup">
+                  <form class="form-horizontal">
+                  <fieldset>
+                  <!-- Sign Up Form -->
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label class="control-label" for="Email">Email:</label>
+                    <div class="controls">
+                      <input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label class="control-label" for="userid">Alias:</label>
+                    <div class="controls">
+                      <input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                    </div>
+                  </div>
+
+                  <!-- Password input-->
+                  <div class="control-group">
+                    <label class="control-label" for="password">Password:</label>
+                    <div class="controls">
+                      <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                      <em>1-8 Characters</em>
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
+                    <div class="controls">
+                      <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                    </div>
+                  </div>
+
+                  <!-- Multiple Radios (inline) -->
+                  <br>
+                  <div class="control-group">
+                    <label class="control-label" for="humancheck">Humanity Check:</label>
+                    <div class="controls">
+                      <label class="radio inline" for="humancheck-0">
+                        <input type="radio" name="humancheck" id="humancheck-0" value="robot" checked="checked">I'm a Robot</label>
+                      <label class="radio inline" for="humancheck-1">
+                        <input type="radio" name="humancheck" id="humancheck-1" value="human">I'm Human</label>
+                    </div>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="control-group">
+                    <label class="control-label" for="confirmsignup"></label>
+                    <div class="controls">
+                      <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                    </div>
+                  </div>
+                  </fieldset>
+                  </form>
+            </div>
+          </div>
+            </div>
+            <div class="modal-footer">
+            <center>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </center>
+
+            </div>
+          </div>
+        </div>
+      </div><!--end of modal-->
+      </form>
+		</div>
+	</div>
+</div>
+<!-- </div>
+</div> -->
+</div>
+</div>
+</div>
+<!-- Button trigger modal -->
+
+<!-- <div class="container">
+    <hr class="prettyline">
+    <br>
+    <center> -->
+
+
+    <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>BD<span>FJ</span></h3>
+
+        <p class="footer-links">
+          <a href="#">Home</a>
+          .
+          <a href="#">Blog</a>
+          .
+          <a href="#">Pricing</a>
+          .
+          <a href="#">About</a>
+          .
+          <a href="#">Faq</a>
+          .
+          <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">BDFJ &copy; 2016</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Coding Dojo Burbank</span> CA, USA</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+1 123 123456</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">bdfj@comopany.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="https://www.facebook.com/dustin.lee.737?fref=ts"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+      </div>
+
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+*{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0px auto;
+}
+a{
+  text-decoration: none;
+}
+#header{
+  width: 100%;
+  padding-top: 20px;
+  position: fixed;
+  /*background-color: white;*/
+}
+#header a, #header h1, #header form, .right, #logo, .tags{
+  display: inline;
+  color: black;
+
+}
+#header input{
+  /*width: 10%;*/
+}
+#header h1{
+  margin-right: 5%;
+  margin-left: 3%;
+}
+#header a{
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 1.1em;
+
+
+}
+#header input{
+  margin-right: 7%;
+  margin-top: 1.2%;
+  border-radius: 10px;
+  float: right;
+
+}
+#header .cart img{
+  margin-left: 27%;
+  margin-top: 1%;
+  width: 25px;
+  height: 25px;
+}
+#header img{
+  width: 40px;
+  height: 40px;
+  size: small;
+  margin-left: 13px;
+  margin-right: 10px;
+}
+#header img, #header a{
+  vertical-align: top;
+}
+.tags{
+
+  margin-left: 70px;
+
+}
+/*.tags #logo{
+  vertical-align: bottom;
+}*/
+#rightheader, #header{
+  display: inline-block;
+}
+#rightheader{
+  display: inline-block;
+  width: 300px;
+  float: right;
+
+}
+
+input[type=text] {
+   width: 100px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   font-size: 16px;
+   background-color: white;
+   background-image: url('searchicon.png');
+   background-position: 10px 10px;
+   background-repeat: no-repeat;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+   width: 50%;
+}
+
+#shopnow{
+  /*padding-top: 19px;*/
+  height: 40px;
+  width: 180px;
+  background-color: white;
+
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: calc(75% - 20px);
+  left: calc(50% - 90px);
+
+
+}
+.wys{
+  position: absolute;
+  text-align: center;
+  top: calc(40% - 20px);
+  color: white;
+}
+.wys h1{
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.click-me{
+  /*outline: 2px dotted red;*/
+  height: 40px;
+  width: 180px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+}
+a:link    {color:#000;}  /* unvisited link  */
+a:visited {color:#000;}  /* visited link    */
+a:hover   {color:#000;}  /* mouse over link */
+a:active  {color:#000;}  /* selected link   */
+/*#categories{
+  margin: 3% 3% 0% 3%;
+  border: 1px solid black;
+  width: 90%;
+  height: 30px;
+  padding-top: 15px;
+}
+#categories a{
+  display: inline;
+  margin-left: 13%;
+
+}*/
+
+#mainimage{
+
+  background-image: url("http://i.imgur.com/iZbfjyO.jpg");
+  width:100%;
+  height: 700px;
+  border: 1px solid black;
+
+  position: relative;
+}
+#mainimage {
+
+}
+/*#footer{
+  width: 100%;
+  background-color: lightgrey;
+  height: 150px;
+}
+
+#footer .connect{
+  height: 10px;
+  list-style: none;
+  margin-left: 3%;
+}
+#footer li:first-child{
+  padding-bottom: 15px;
+  padding-top: 15px;*/
+
+
+
+
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:inline;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
